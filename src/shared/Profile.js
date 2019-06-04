@@ -24,11 +24,11 @@ class Profile extends Component {
     renderTemplate() {
         const user = this.props.user;
         if(!user) {
-            return `<div></div>`;
+            return `<div id="profile">Not logged in</div>`;
         }
         const photoURL = user.photoURL || './assets/blank-profile-picture.png';
         return /*html*/ `
-            <div id="profile">
+            <div id="profile"></div>
                 <img id="profile-image" src="${photoURL}">
                 <div id="profile-info">
                     <span>${user.displayName}</span>

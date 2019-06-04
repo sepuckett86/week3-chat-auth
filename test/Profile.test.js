@@ -7,7 +7,7 @@ QUnit.module('Profile');
 test('renders profile html', assert => {
     // Arrange
     const user = {
-        displayName: 'Static Name',
+        displayName: 'Name',
         photoURL: './assets/blank-profile-picture.png'
     };
     const expected = /*html*/ `
