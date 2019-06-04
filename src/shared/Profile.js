@@ -28,7 +28,7 @@ class Profile extends Component {
         }
         const photoURL = user.photoURL || './assets/blank-profile-picture.png';
         return /*html*/ `
-            <div id="profile"></div>
+            <div id="profile">
                 <img id="profile-image" src="${photoURL}">
                 <div id="profile-info">
                     <span>${user.displayName}</span>

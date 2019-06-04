@@ -1,0 +1,14 @@
+.chat-pic {
+    height: 30px;
+    border-radius: 50%;
+}
+
+ul {
+    list-style: none;
+    padding: 0px;
+    margin: 30px;
+}
+
+li {
+    border: 1px solid black;
+}
