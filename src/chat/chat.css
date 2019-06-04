@@ -1,14 +1,27 @@
-.chat-pic {
+.chat-list .chat-pic {
     height: 30px;
     border-radius: 50%;
 }
 
-ul {
+.chat-list {
     list-style: none;
     padding: 0px;
     margin: 30px;
 }
 
-li {
+.chat-list li {
     border: 1px solid black;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.chat-info {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.chat-list p {
+    padding: 15px;
 }

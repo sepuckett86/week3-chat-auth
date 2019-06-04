@@ -15,17 +15,21 @@ class ChatList extends Component {
 
     renderTemplate() {
         return /*html*/ `
-            <ul>
-                <li>
+            <ul class="chat-list">
+            <li>
+                <div class="chat-info">
                     <img class="chat-pic" src="./assets/blank-profile-picture.png">
                     <span>Name</span>
-                    <p>Chat message goes here. It's really cool!</p>
-                </li>
-                <li>
+                </div>
+                <p>Chat message goes here. It's really cool!</p>
+            </li>
+            <li>
+                <div class="chat-info">
                     <img class="chat-pic" src="./assets/blank-profile-picture.png">
                     <span>Name</span>
-                    <p>Chat message goes here. It's really cool!</p>
-                </li>
+                </div>
+                <p>Chat message goes here. It's really cool!</p>
+            </li>
             </ul>
         `;
     }
