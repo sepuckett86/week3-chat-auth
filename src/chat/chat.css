@@ -1,12 +1,15 @@
 .chat-list .chat-pic {
     height: 30px;
+    width: 30px;
     border-radius: 50%;
+    padding: 5px;
+    margin: auto;
 }
 
 .chat-list {
     list-style: none;
     padding: 0px;
-    margin: 30px;
+    margin: 10px;
 }
 
 .chat-list li {
@@ -14,12 +17,14 @@
     margin: 10px;
     display: flex;
     align-items: center;
+    border-radius: 10px;
 }
 
 .chat-info {
     display: flex;
     flex-direction: column;
     padding: 15px;
+    width: 100px;
 }
 
 .chat-list p {
