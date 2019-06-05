@@ -1,0 +1,17 @@
+#add-room-form {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#room-list {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#room-list li {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+}

@@ -1,7 +1,7 @@
 import Component from '../Component.js';
 import Header from '../shared/Header.js';
-import ChatList from '../chat/ChatList.js';
-// import ChatInput from '../chat/ChatInput.js';
+import AddRoom from './AddRoom.js';
+import RoomList from './RoomList.js';
 
 class App extends Component {
     render() {
@@ -11,11 +11,15 @@ class App extends Component {
         const header = new Header();
         const headerDOM = header.render();
 
-        const chatList = new ChatList();
-        const chatListDOM = chatList.render();
+        const addRoom = new AddRoom();
+        const addRoomDOM = addRoom.render();
+
+        const roomList = new RoomList();
+        const roomListDOM = roomList.render();
 
         dom.prepend(headerDOM);
-        main.appendChild(chatListDOM);
+        main.appendChild(addRoomDOM);
+        main.appendChild(roomListDOM);
 
         return dom;
     }
