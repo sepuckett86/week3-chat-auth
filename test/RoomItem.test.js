@@ -11,12 +11,12 @@ test('returns html for li', assert => {
     const expected = /*html*/ `
         <li>
             <a href="./">
-                <p>Room Name</p>
+                <p>Cats</p>
             </a>
             <button>Delete Room</button>
         </li>
     `;
-    
+
     // Act
     const roomItem = new RoomItem({ room });
     const actual = roomItem.renderTemplate();
