@@ -6,7 +6,6 @@ class AddRoom extends Component {
         const dom = this.renderDOM();
         const input = dom.querySelector('input');
 
-
         dom.addEventListener('submit', event => {
             event.preventDefault();
             
@@ -23,8 +22,6 @@ class AddRoom extends Component {
                 input.value = '';
             });
         });
-
-        
 
         return dom;
     }
