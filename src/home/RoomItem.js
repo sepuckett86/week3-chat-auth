@@ -19,10 +19,10 @@ class RoomItem extends Component {
         
         return dom;
     }
+
     renderTemplate() {
         const room = this.props.room;
         const isOwner = room.owner === auth.currentUser.uid;
-        const ownerName = isOwner ? 'you!' : 'someone else.';
 
         if(isOwner) {
             return /*html*/ `
@@ -40,7 +40,7 @@ class RoomItem extends Component {
                     <a href="./chat.html?key=${room.key}>">
                         <p>${room.name}</p>
                     </a>
-                    <p>Created by ${ownerName}</p>
+                    <p>Created by someone else.</p>
                 </li>
             `;
         }
