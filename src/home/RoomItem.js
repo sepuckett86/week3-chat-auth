@@ -1,5 +1,5 @@
 import Component from '../Component.js';
-import { chatRoomRef } from '../services/firebase.js';
+import { chatRoomRef, auth } from '../services/firebase.js';
 
 class RoomItem extends Component {
     render() {
@@ -9,9 +9,13 @@ class RoomItem extends Component {
         const button = dom.querySelector('button');
 
         button.addEventListener('click', () => {
-            chatRoomRef
-                .child(room.key)
-                .remove();
+            if(room.owner === auth.currentUser.uid) {
+                chatRoomRef
+                    .child(room.key)
+                    .remove();
+            } else {
+                alert('You are not the owner, so you cannot delete this chat room');
+            }
         });
 
         return dom;
