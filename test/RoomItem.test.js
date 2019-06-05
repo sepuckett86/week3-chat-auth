@@ -1,18 +1,22 @@
 import RoomItem from '../src/home/RoomItem.js';
+import { auth } from '../src/services/firebase.js';
 
 const test = QUnit.test;
 
-test('returns html for li', assert => {
+test('returns html for li if user created room', assert => {
     // Arrange
     const room = {
-        name: 'Cats'
+        name: 'Cats',
+        key: 'KEY',
+        owner: auth.currentUser.uid
     };
 
     const expected = /*html*/ `
         <li>
-            <a href="./">
+            <a href="./chat.html?key=KEY>">
                 <p>Cats</p>
             </a>
+            <p>Created by you!</p>
             <button>Delete Room</button>
         </li>
     `;
