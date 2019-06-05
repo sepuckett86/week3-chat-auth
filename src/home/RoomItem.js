@@ -5,19 +5,18 @@ class RoomItem extends Component {
     render() {
         const dom = this.renderDOM();
         const room = this.props.room;
+        const isOwner = room.owner === auth.currentUser.uid;
 
-        const button = dom.querySelector('button');
+        if(isOwner) {
+            const button = dom.querySelector('button');
 
-        button.addEventListener('click', () => {
-            if(room.owner === auth.currentUser.uid) {
+            button.addEventListener('click', () => {
                 chatRoomRef
                     .child(room.key)
                     .remove();
-            } else {
-                alert('You are not the owner, so you cannot delete this chat room');
-            }
-        });
-
+            });
+        }
+        
         return dom;
     }
     renderTemplate() {
@@ -25,15 +24,26 @@ class RoomItem extends Component {
         const isOwner = room.owner === auth.currentUser.uid;
         const ownerName = isOwner ? 'you!' : 'someone else.';
 
-        return /*html*/ `
+        if(isOwner) {
+            return /*html*/ `
             <li>
                 <a href="./chat.html?key=${room.key}>">
                     <p>${room.name}</p>
                 </a>
-                <p>Created by ${ownerName}</p>
+                <p>Created by you!</p>
                 <button>Delete Room</button>
             </li>
-        `;
+        `; 
+        } else {
+            return /*html*/ `
+                <li>
+                    <a href="./chat.html?key=${room.key}>">
+                        <p>${room.name}</p>
+                    </a>
+                    <p>Created by ${ownerName}</p>
+                </li>
+            `;
+        }
     }
 }
 
