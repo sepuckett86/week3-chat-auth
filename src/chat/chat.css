@@ -1,0 +1,30 @@
+.chat-list .chat-pic {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    padding: 5px;
+    margin: auto;
+}
+
+.chat-list {
+    margin: 10px;
+}
+
+.chat-list li {
+    border: 1px solid black;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.chat-info {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    width: 100px;
+}
+
+.chat-list p {
+    padding: 15px;
+}
