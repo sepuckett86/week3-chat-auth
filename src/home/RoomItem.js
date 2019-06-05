@@ -22,12 +22,15 @@ class RoomItem extends Component {
     }
     renderTemplate() {
         const room = this.props.room;
+        const isOwner = room.owner === auth.currentUser.uid;
+        const ownerName = isOwner ? 'you!' : 'someone else.';
 
         return /*html*/ `
             <li>
-                <a href="./">
+                <a href="./chat.html?key=${room.key}>">
                     <p>${room.name}</p>
                 </a>
+                <p>Created by ${ownerName}</p>
                 <button>Delete Room</button>
             </li>
         `;
