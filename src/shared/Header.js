@@ -20,7 +20,7 @@ class Header extends Component {
     renderTemplate() {
         return /*html*/ `
             <header>
-                <h1>ChatAPP</h1>
+                <a href="./"><h1>ChatAPP</h1></a>
             </header>
         `;
     }

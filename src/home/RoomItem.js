@@ -27,7 +27,7 @@ class RoomItem extends Component {
         if(isOwner) {
             return /*html*/ `
             <li>
-                <a href="./chat.html?key=${room.key}>">
+                <a href="./chat.html?key=${room.key}">
                     <p>${room.name}</p>
                 </a>
                 <p>Created by you!</p>
@@ -37,7 +37,7 @@ class RoomItem extends Component {
         } else {
             return /*html*/ `
                 <li>
-                    <a href="./chat.html?key=${room.key}>">
+                    <a href="./chat.html?key=${room.key}">
                         <p>${room.name}</p>
                     </a>
                     <p>Created by someone else.</p>
