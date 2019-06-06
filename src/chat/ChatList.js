@@ -5,34 +5,22 @@ class ChatList extends Component {
     render() {
         const dom = this.renderDOM();
 
-        const chatItem = new ChatItem();
-        const chatItemDOM = chatItem.render();
+        const chats = this.props.chats;
 
-        dom.appendChild(chatItemDOM);
+        chats.forEach(chat => {
+            const chatItem = new ChatItem({ chat });
+            const chatItemDOM = chatItem.render();
+            dom.appendChild(chatItemDOM);
+        });
 
         return dom;
     }    
 
     renderTemplate() {
-        const name = this.props.name;
+        const name = this.props.name || '';
         return /*html*/ `
             <ul class="chat-list">
-            <h2>Room: ${name}</h2>
-            <li>
-                <div class="chat-info">
-                    <img class="chat-pic" src="./assets/blank-profile-picture.png">
-                    <span>Name</span>
-                    <span>Date and Time</span>
-                </div>
-                <p>Chat message goes here. It's really cool!</p>
-            </li>
-            <li>
-                <div class="chat-info">
-                    <img class="chat-pic" src="./assets/blank-profile-picture.png">
-                    <span>Name</span>
-                </div>
-                <p>Chat message goes here. It's really cool!</p>
-            </li>
+                <h2>Room: ${name}</h2>
             </ul>
         `;
     }

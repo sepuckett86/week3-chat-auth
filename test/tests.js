@@ -8,6 +8,7 @@ import './html-to-DOM.test.js';
 
 import './Profile.test.js';
 // import './RoomItem.test.js';
+import './ChatItem.test.js';
 
 QUnit.done(() => {
     app.delete();

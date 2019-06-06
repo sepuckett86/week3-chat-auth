@@ -2,13 +2,15 @@ import Component from '../Component.js';
 
 class ChatItem extends Component {
     renderTemplate() {
+        const chat = this.props.chat;
+        const photoUrl = chat.photoUrl || './assets/blank-profile-picture.png';
         return /*html*/ `
             <li>
                 <div class="chat-info">
-                    <img class="chat-pic" src="./assets/blank-profile-picture.png">
-                    <span>Name Here Super</span>
+                    <img class="chat-pic" src="${photoUrl}">
+                    <span>${chat.name}</span>
                 </div>
-                <p>Chat message goes here. It's really cool!</p>
+                <p>${chat.message}</p>
             </li>
         `;
     }
