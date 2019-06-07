@@ -17,10 +17,8 @@ class ChatList extends Component {
     }    
 
     renderTemplate() {
-        const name = this.props.name || '';
         return /*html*/ `
             <ul class="chat-list">
-                <h2>Room: ${name}</h2>
             </ul>
         `;
     }

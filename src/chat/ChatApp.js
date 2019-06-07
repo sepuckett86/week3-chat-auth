@@ -3,7 +3,7 @@ import Header from '../shared/Header.js';
 import ChatList from './ChatList.js';
 import ChatInput from './ChatInput.js';
 import QUERY from '../utils/QUERY.js';
-import { chatRoomRef } from '../services/firebase.js';
+import { chatRoomRef, messagesByRoomRef } from '../services/firebase.js';
 
 class ChatApp extends Component {
     render() {
@@ -19,22 +19,27 @@ class ChatApp extends Component {
         if(!key) {
             window.location = './';
         }
-
-        let name = '';
-
-        chatRoomRef
-            .child(key)
-            .once('value', snapshot => {
-                const value = snapshot.val();
-                name = value.name;
-                chatList.update({ name });
-            });
-
-        const chatList = new ChatList({ name, chats: [] });
+        const chatList = new ChatList({ chats: [] });
         const chatListDOM = chatList.render();
 
         const chatInput = new ChatInput();
         const chatInputDOM = chatInput.render();
+
+        chatRoomRef
+            .child(key)
+            .on('value', snapshot => {
+                const chatRoom = snapshot.val();
+
+                messagesByRoomRef
+                    .child(chatRoom.key)
+                    .on('value', snapshot => {
+                        const value = snapshot.val();
+                        const chats = value ? Object.values(value) : [];
+                        chatList.update({ chats });
+                    });
+
+                chatInput.update({ chatRoom });
+            });
 
         dom.prepend(headerDOM);
         main.appendChild(chatListDOM);

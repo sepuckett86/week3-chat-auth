@@ -8,9 +8,10 @@ class ChatItem extends Component {
             <li>
                 <div class="chat-info">
                     <img class="chat-pic" src="${photoUrl}">
-                    <span>${chat.name}</span>
+                    <span>${chat.displayName}</span>
                 </div>
                 <p>${chat.message}</p>
+                <p>${chat.date}</p>
             </li>
         `;
     }
