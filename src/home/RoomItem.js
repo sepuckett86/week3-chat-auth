@@ -1,5 +1,5 @@
 import Component from '../Component.js';
-import { chatRoomRef, auth } from '../services/firebase.js';
+import { chatRoomRef, auth, messagesByRoomRef } from '../services/firebase.js';
 
 class RoomItem extends Component {
     render() {
@@ -12,6 +12,9 @@ class RoomItem extends Component {
 
             button.addEventListener('click', () => {
                 chatRoomRef
+                    .child(room.key)
+                    .remove();
+                messagesByRoomRef
                     .child(room.key)
                     .remove();
             });

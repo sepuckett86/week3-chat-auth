@@ -30,6 +30,10 @@
     padding: 15px;
 }
 
+.chat-list button {
+    margin: 15px;
+}
+
 .chat-info {
     width: 20%;
 }
