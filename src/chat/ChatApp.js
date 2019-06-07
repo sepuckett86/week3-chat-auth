@@ -29,7 +29,7 @@ class ChatApp extends Component {
         const chatInput = new ChatInput();
         const chatInputDOM = chatInput.render();
 
-        const chatList = new ChatList({ chats: [] });
+        const chatList = new ChatList({ chats: [], chatRoom: {} });
         const chatListDOM = chatList.render();
 
         // Get Title of Chat Room
@@ -39,6 +39,7 @@ class ChatApp extends Component {
                 const chatRoom = snapshot.val();
                 chatTitle.update({ title: chatRoom.name });
                 chatInput.update({ chatRoom });
+                chatList.update({ chatRoom });
             });
 
         // Get Messages
@@ -53,8 +54,8 @@ class ChatApp extends Component {
         dom.prepend(headerDOM);
 
         main.appendChild(chatTitleDOM);
-        main.appendChild(chatInputDOM);
         main.appendChild(chatListDOM);
+        main.appendChild(chatInputDOM);
 
         return dom;
     }

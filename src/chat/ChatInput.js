@@ -6,7 +6,7 @@ class ChatInput extends Component {
         const dom = this.renderDOM();
         const chatRoom = this.props.chatRoom;
 
-        const textarea = dom.querySelector('textarea');
+        const input = dom.querySelector('input');
 
         dom.addEventListener('submit', event => {
             event.preventDefault();
@@ -14,19 +14,17 @@ class ChatInput extends Component {
             // this generates a random key and assigns to returned ref
             const chatRef = messagesByRoomRef.child(chatRoom.key).push();
 
-            const date = Date();
-
             const chat = {
                 key: chatRef.key,
-                message: textarea.value,
+                message: input.value,
                 uid: auth.currentUser.uid, // id of who said this
                 displayName: auth.currentUser.displayName,
                 photoURL: auth.currentUser.photoURL,
-                date: date
+                date: new Date().toISOString()
             };
 
             chatRef.set(chat).then(() => {
-                textarea.value = '';
+                input.value = '';
             });
         });
 
@@ -34,9 +32,9 @@ class ChatInput extends Component {
     }
     renderTemplate() {
         return /*html*/ `
-            <form>
+            <form id="chat-input-form">
                 <h3>Enter a message:</h3>
-                <textarea type="text" width="40"></textarea>
+                <input type="text">
                 <button>Submit</button>
             </form>
         `;

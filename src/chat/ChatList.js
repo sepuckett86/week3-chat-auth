@@ -6,14 +6,16 @@ class ChatList extends Component {
         const dom = this.renderDOM();
 
         const chats = this.props.chats;
-        const reversedChats = chats.slice().reverse();
+        const chatRoom = this.props.chatRoom;
 
-        reversedChats.forEach(chat => {
-            const chatItem = new ChatItem({ chat });
+        chats.forEach(chat => {
+            const chatItem = new ChatItem({ chat, chatRoom });
             const chatItemDOM = chatItem.render();
             dom.appendChild(chatItemDOM);
         });
 
+        dom.scrollTop = dom.scrollHeight;
+        
         return dom;
     }    
 

@@ -16,6 +16,7 @@
     display: flex;
     align-items: center;
     border-radius: 10px;
+    text-align: center;
 }
 
 .chat-info {
@@ -27,4 +28,32 @@
 
 .chat-list p {
     padding: 15px;
+}
+
+.chat-info {
+    width: 20%;
+}
+
+.chat-message {
+    width: 60%;
+}
+
+.chat-date {
+    width: 20%;
+}
+
+#chat-input-form {
+    margin: 20px;
+}
+
+#chat-input-form input {
+    width: 90%;
+    font-size: 16px;
+}
+
+#chat-input-form button {
+    margin: 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 10px;
 }
