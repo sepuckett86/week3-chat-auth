@@ -13,10 +13,11 @@ header {
     display: flex;
     justify-content: space-between;
     margin: 20px;
-    background: #FA9EBA;
+    background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 10px;
+    border: outset 5px pink;
 }
 
 #profile span {

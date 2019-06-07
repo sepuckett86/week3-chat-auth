@@ -19,10 +19,11 @@ body {
 }
 
 main {
-    background: rgb(240, 218, 222);
+    background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
     margin: 20px;
     padding: 20px;
     border-radius: 10px;
+    border: outset 5px pink;
 }
 
 ul {

@@ -1,5 +1,6 @@
 import Component from '../Component.js';
 import ChatItem from './ChatItem.js';
+import { usersRef } from '../services/firebase.js';
 
 class ChatList extends Component {
     render() {
@@ -9,12 +10,22 @@ class ChatList extends Component {
         const chatRoom = this.props.chatRoom;
 
         chats.forEach(chat => {
-            const chatItem = new ChatItem({ chat, chatRoom });
+            const chatItem = new ChatItem({ chat, chatRoom, user: {} });
             const chatItemDOM = chatItem.render();
             dom.appendChild(chatItemDOM);
+            
+            usersRef
+                .child(chat.uid)
+                .on('value', snapshot => {
+                    const value = snapshot.val();
+                    chatItem.update({ user: value });
+                });
+            
         });
 
-        dom.scrollTop = dom.scrollHeight;
+        setTimeout(() => {
+            dom.scrollTop = dom.scrollHeight;
+        });
         
         return dom;
     }    

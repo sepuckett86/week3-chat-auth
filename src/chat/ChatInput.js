@@ -18,8 +18,6 @@ class ChatInput extends Component {
                 key: chatRef.key,
                 message: input.value,
                 uid: auth.currentUser.uid, // id of who said this
-                displayName: auth.currentUser.displayName,
-                photoURL: auth.currentUser.photoURL,
                 date: new Date().toISOString()
             };
 

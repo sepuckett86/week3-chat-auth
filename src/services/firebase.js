@@ -15,5 +15,6 @@ export const db = firebase.database();
 
 export const chatRoomRef = db.ref('chatRooms');
 export const messagesByRoomRef = db.ref('messagesByRoom');
+export const usersRef = db.ref('users');
 
 window.db = db;
