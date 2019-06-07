@@ -36,7 +36,7 @@ class ChatInput extends Component {
         return /*html*/ `
             <form>
                 <h3>Enter a message:</h3>
-                <textarea type="text"></textarea>
+                <textarea type="text" width="40"></textarea>
                 <button>Submit</button>
             </form>
         `;

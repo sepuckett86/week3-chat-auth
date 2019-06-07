@@ -6,8 +6,9 @@ class ChatList extends Component {
         const dom = this.renderDOM();
 
         const chats = this.props.chats;
+        const reversedChats = chats.slice().reverse();
 
-        chats.forEach(chat => {
+        reversedChats.forEach(chat => {
             const chatItem = new ChatItem({ chat });
             const chatItemDOM = chatItem.render();
             dom.appendChild(chatItemDOM);

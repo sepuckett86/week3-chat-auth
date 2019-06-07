@@ -10,7 +10,12 @@ h1 {
 
 body {
     font-family: 'Asap', sans-serif;
-    background: rgb(174, 175, 235);
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#d4a1f4+0,6862b2+100 */
+    background: #d4a1f4; /* Old browsers */
+    background: -moz-linear-gradient(left,  #d4a1f4 0%, #6862b2 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #d4a1f4 0%,#6862b2 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #d4a1f4 0%,#6862b2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4a1f4', endColorstr='#6862b2',GradientType=1 ); /* IE6-9 */
 }
 
 main {

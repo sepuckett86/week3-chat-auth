@@ -28,9 +28,8 @@ class RoomItem extends Component {
             return /*html*/ `
             <li>
                 <a href="./chat.html?key=${room.key}">
-                    <p>${room.name}</p>
-                </a>
-                <p>Created by you!</p>
+                    ${room.name}
+                </a> - Created by you!
                 <button>Delete Room</button>
             </li>
         `; 
@@ -38,9 +37,8 @@ class RoomItem extends Component {
             return /*html*/ `
                 <li>
                     <a href="./chat.html?key=${room.key}">
-                        <p>${room.name}</p>
-                    </a>
-                    <p>Created by someone else.</p>
+                        ${room.name}
+                    </a> - Created by someone else.
                 </li>
             `;
         }

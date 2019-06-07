@@ -2,7 +2,10 @@ import Component from '../Component.js';
 import Header from '../shared/Header.js';
 import ChatList from './ChatList.js';
 import ChatInput from './ChatInput.js';
+import ChatTitle from './ChatTitle.js';
+
 import QUERY from '../utils/QUERY.js';
+
 import { chatRoomRef, messagesByRoomRef } from '../services/firebase.js';
 
 class ChatApp extends Component {
@@ -19,31 +22,39 @@ class ChatApp extends Component {
         if(!key) {
             window.location = './';
         }
-        const chatList = new ChatList({ chats: [] });
-        const chatListDOM = chatList.render();
 
+        const chatTitle = new ChatTitle({ title: 'Chat Room' });
+        const chatTitleDOM = chatTitle.render();
+        
         const chatInput = new ChatInput();
         const chatInputDOM = chatInput.render();
 
+        const chatList = new ChatList({ chats: [] });
+        const chatListDOM = chatList.render();
+
+        // Get Title of Chat Room
         chatRoomRef
             .child(key)
             .on('value', snapshot => {
                 const chatRoom = snapshot.val();
-
-                messagesByRoomRef
-                    .child(chatRoom.key)
-                    .on('value', snapshot => {
-                        const value = snapshot.val();
-                        const chats = value ? Object.values(value) : [];
-                        chatList.update({ chats });
-                    });
-
+                chatTitle.update({ title: chatRoom.name });
                 chatInput.update({ chatRoom });
             });
 
+        // Get Messages
+        messagesByRoomRef
+            .child(key)
+            .on('value', snapshot => {
+                const value = snapshot.val();
+                const chats = value ? Object.values(value) : [];
+                chatList.update({ chats });
+            });
+
         dom.prepend(headerDOM);
-        main.appendChild(chatListDOM);
+
+        main.appendChild(chatTitleDOM);
         main.appendChild(chatInputDOM);
+        main.appendChild(chatListDOM);
 
         return dom;
     }
