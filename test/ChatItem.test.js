@@ -11,7 +11,13 @@ test('returns html for chat item', assert => {
         uid: 123, // id of who said this
         displayName: 'name of user who said this',
         photoURL: null,
-        date: 'date'
+        date: new Date().toISOString()
+    };
+
+    const chatRoom = {
+        key: 'x',
+        name: 'x',
+        owner: 'x'
     };
 
     const expected = /*html*/ `
@@ -26,7 +32,7 @@ test('returns html for chat item', assert => {
     `;
 
     // Act
-    const chatItem = new ChatItem({ chat });
+    const chatItem = new ChatItem({ chat, chatRoom, user: {} });
     const actual = chatItem.renderTemplate();
     
     // Assert
