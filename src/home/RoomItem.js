@@ -24,6 +24,7 @@ class RoomItem extends Component {
     }
 
     renderTemplate() {
+        const creator = this.props.creator;
         const room = this.props.room;
         const isOwner = room.owner === auth.currentUser.uid;
 
@@ -41,7 +42,7 @@ class RoomItem extends Component {
                 <li>
                     <a href="./chat.html?key=${room.key}">
                         ${room.name}
-                    </a> - Created by someone else.
+                    </a> - Created by ${creator}.
                 </li>
             `;
         }

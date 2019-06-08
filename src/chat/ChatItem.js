@@ -25,9 +25,10 @@ class ChatItem extends Component {
         const user = this.props.user;
 
         const photoUrl = user.photoURL || './assets/blank-profile-picture.png';
-        // const date = new Date(chat.date);
+
         const momentDate = moment(chat.date);
         const removeButton = chat.uid === auth.currentUser.uid ? `<button>X</button>` : '';
+        
         return /*html*/ `
             <li>
                 <div class="chat-info">
