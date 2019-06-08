@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Asap|Pacifico&display=swap');
+
+main {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+}
+
+body {
+    font-family: 'Asap', sans-serif;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#d4a1f4+0,6862b2+100 */
+    background: #d4a1f4; /* Old browsers */
+    background: -moz-linear-gradient(left,  #d4a1f4 0%, #6862b2 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #d4a1f4 0%,#6862b2 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #d4a1f4 0%,#6862b2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4a1f4', endColorstr='#6862b2',GradientType=1 ); /* IE6-9 */
+}
+
+main {
+    background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border: outset 5px pink;
+}
+
+ul {
+    list-style: none;
+    padding: 0px;
+}
